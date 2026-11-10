@@ -74,7 +74,7 @@ Execute a file with a **Double Extension**.
 	# Double Extension
 	Write-Host -ForegroundColor Cyan "Initiating a T1204.002 - Malicious File Extension with Double Extension evasion"
 	$MalwarePath = "C:\Windows\System32\calc.exe"
-	$TrojanPath = "$Env:USERPROFILE\Desktop\freemoney.pdf.exe"
+	$TrojanPath = Join-Path ([Environment]::GetFolderPath('Desktop')) 'freemoney.pdf.exe'
 
 	Copy-Item -Path $MalwarePath -Destination $TrojanPath -Force
 	Get-Item $TrojanPath

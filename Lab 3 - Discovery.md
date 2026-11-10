@@ -91,7 +91,7 @@ Perform **System Information Discovery**
 ```PowerShell
 # Powershell Download Hardness
 Write-Host -ForegroundColor Cyan "Initiating techniques T1082 - System Information Discovery"
-$outputFile = "$env:USERPROFILE\Desktop\recon.txt"
+$outputFile = Join-Path ([Environment]::GetFolderPath('Desktop')) 'recon.txt'
 
 $cmd = @"
 echo ==== Hostname ==== >> "$outputFile"

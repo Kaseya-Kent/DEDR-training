@@ -94,7 +94,7 @@ Write-Host -ForegroundColor Cyan "Writing EICAR file manually..."
 $EICARString = 'X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*'
 $EICARString | Out-File -Encoding ASCII -FilePath "$env:USERPROFILE\EICAR.exe" -Force
 $startupShortcut = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\evil_calc.lnk"
-$desktopShortcut = "$env:USERPROFILE\Desktop\evil_calc.lnk"
+$desktopShortcut = Join-Path ([Environment]::GetFolderPath('Desktop')) 'evil_calc.lnk'
 
 $cmd = @"
 `$WScriptShell = New-Object -ComObject WScript.Shell
